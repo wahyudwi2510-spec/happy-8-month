@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 8 Month ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#081229,#172554,#4338ca,#ec4899);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+/* Background */
+
+#stars{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:0;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{
+opacity:.2;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1.5);
+}
+}
+
+/* Moon */
+
+.moon{
+position:absolute;
+top:50px;
+right:60px;
+width:120px;
+height:120px;
+background:white;
+border-radius:50%;
+box-shadow:
+0 0 40px white,
+0 0 90px white;
+opacity:.9;
+}
+
+/* Glass Card */
+
+.container{
+position:relative;
+z-index:10;
+width:90%;
+max-width:420px;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.2);
+text-align:center;
+box-shadow:0 0 40px rgba(255,105,180,.35);
+}
+
+h1{
+font-size:34px;
+margin-bottom:15px;
+text-shadow:0 0 15px hotpink;
+}
+
+.desc{
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.gift{
+font-size:120px;
+cursor:pointer;
+animation:bounce 1.8s infinite;
+transition:.3s;
+}
+
+.gift:hover{
+transform:scale(1.1);
+filter:drop-shadow(0 0 20px pink);
+}
+
+@keyframes bounce{
+50%{
+transform:translateY(-15px);
+}
+}
+
+.tap{
+margin-top:15px;
+opacity:.9;
+}
+
+/* Letter */
+
+#letter{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:auto;
+padding:30px;
+background:linear-gradient(#081229,#172554,#ec4899);
+}
+
+.paper{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.08);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+}
+
+.paper h1{
+text-align:center;
+margin-bottom:25px;
+}
+
+#typing{
+white-space:pre-line;
+line-height:2;
+font-size:18px;
+}
+
+/* Music Button */
+
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:#ec4899;
+color:white;
+font-size:26px;
+cursor:pointer;
+box-shadow:0 0 20px hotpink;
+z-index:99999;
+}
+
+/* Hearts */
+
+.heart{
+position:fixed;
+pointer-events:none;
+animation:heartFly 5s linear forwards;
+z-index:999;
+}
+
+@keyframes heartFly{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+/* Fireworks */
+
+.fire{
+position:fixed;
+pointer-events:none;
+animation:boom 1s forwards;
+z-index:9999;
+}
+
+@keyframes boom{
+0%{
+transform:scale(.2);
+opacity:1;
+}
+100%{
+transform:scale(2.5);
+opacity:0;
+}
+}
+
+#countdown{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.8);
+font-size:180px;
+font-weight:bold;
+color:white;
+text-shadow:0 0 20px hotpink,0 0 50px hotpink;
+z-index:999999;
+}
+
+.countAnim{
+animation:zoom 1s;
+}
+
+@keyframes zoom{
+0%{
+transform:scale(0);
+opacity:0;
+}
+50%{
+transform:scale(1.5);
+}
+100%{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@keyframes bgMove{
+0%{
+background-position:0% 50%;
+}
+50%{
+background-position:100% 50%;
+}
+100%{
+background-position:0% 50%;
+}
+}
+
+#hugBtn{
+margin-top:30px;
+padding:15px 35px;
+font-size:22px;
+border:none;
+border-radius:40px;
+background:#ff4fa3;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px hotpink;
+transition:.3s;
+}
+
+#hugBtn:hover{
+transform:scale(1.08);
+}
+
+#hugText{
+margin-top:25px;
+font-size:24px;
+text-align:center;
+line-height:2;
+}
+
+.slider{
+position:relative;
+width:100%;
+max-width:450px;
+height:300px;
+margin:25px auto;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 0 25px hotpink;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<div class="moon"></div>
+
+<div class="container" id="home">
+
+<h1>Haiii cayangkuuuuu yanggg gemayyyy 💕</h1>
+
+<p class="desc">
+Akunn punya sesuatu buat kamuuu hihihih 💕
+<br><br>
+jangannn lupaaa senyum yaaa cantik 💕💕💕💕🥰🥰🥰 Kita sudah bersama
+
+243 Hari
+5.832 Jam
+349.920 Menit
+</p>
+
+<div class="gift" id="gift">
+🎁
+</div>
+
+<div class="tap">
+✨ Tap kadonya yaa ✨
+</div>
+
+</div>
+
+<div id="letter">
+
+<div class="paper">
+
+
+<h1>💌 Happy 8 Month   Anniversary 💕</h1>
+
+<div id="typing"></div>
+
+<h2 style="margin-top:40px;text-align:center;">
+📸 Galeri Kita 💕
+</h2>
+
+<div class="slider">
+
+<img class="slide active" src="foto1.jpg">
+<img class="slide" src="foto2.jpg">
+<img class="slide" src="foto3.jpg">
+<img class="slide" src="foto4.jpg">
+<img class="slide" src="foto5.jpg">
+<img class="slide" src="foto6.jpg">
+<img class="slide" src="foto7.jpg">
+<img class="slide" src="foto8.jpg">
+
+</div>
+
+<br>
+
+<button id="hugBtn" style="display:none;">
+🤗 Peluk Aku
+</button>
+
+<div id="hugText"></div>
+
+</div>
+
+</div>
+
+<script>
+    
+// ======================
+// BINTANG
+// ======================
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<250;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*2+"s";
+
+stars.appendChild(star);
+
+}
+
+// ======================
+// MUSIK
+// ======================
+
+
+// ======================
+// HATI MELAYANG
+// ======================
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.top="100vh";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},5000);
+
+}
+
+// ======================
+// KEMBANG API
+// ======================
+
+function fireworks(){
+
+const emoji=[
+"✨",
+"💥",
+"🎆",
+"🎇",
+"🌟",
+"💖"
+];
+
+for(let i=0;i<70;i++){
+
+const fire=document.createElement("div");
+
+fire.className="fire";
+
+fire.innerHTML=emoji[Math.floor(Math.random()*emoji.length)];
+
+fire.style.left=Math.random()*100+"vw";
+
+fire.style.top=Math.random()*100+"vh";
+
+fire.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(fire);
+
+setTimeout(()=>{
+
+fire.remove();
+
+},1000);
+
+}
+
+}
+
+// ======================
+// EFEK SALJU PINK
+// ======================
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.innerHTML="🌸";
+
+petal.style.position="fixed";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.top="-20px";
+
+petal.style.fontSize=(15+Math.random()*15)+"px";
+
+petal.style.pointerEvents="none";
+
+petal.style.zIndex="999";
+
+petal.style.transition="6s linear";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.style.transform=
+"translateY(110vh) rotate(360deg)";
+
+petal.style.opacity="0";
+
+},50);
+
+setTimeout(()=>{
+    petal.remove();
+},6000);
+
+}
+
+// ======================
+// TEKS SURAT
+// ======================
+
+const text = `
+
+alowwwww cantikkkk hwhwhwhwhhw walauuu maciii sederhana akuu mauu kacii kamuu kayaaa ginii hwhwhwh mwaaaa mwaaaaa semogaaaaa kamuu sukaa yaaaa, walauuu kitaaa backstreet kitaa harussss tetepp semangattt yaaaaaaa
+
+cayangggggg selamattttt bulannnn yanggggg keeeeee 8 yaaaaaa hwhwhwhwhwhwhwhwhw 💕💕💕💕💕💕 gaaaaa kerasaaaaa yaaaaa kitaaaaa udahhhhh sejauhhhh iniiiiii, makaciiiiii yaaaaa cayanggggg karenaaaaa sampaiii hariii iniiiiii kamuuuuu masiiiii tetep milihhhh akuuuuu, tetep bertahannnn, dan tetep sayanggggg samaaaaa akuuuuu. setiapppp waktuuuuu yang kita lewatin barenggggg benerrrrrr benerrrrr jadiiiiii bagian yangg palingggg berhargaaaa buattttt akuuuuu.
+
+akuuuuu bersyukurrrrr bangettttt dipertemukannnn samaaaaa kamuuuuu. mungkiniiiiii duniaaaaa gaaaa selaluuuuuu baikkkkk samaaaaa kitaaaaa, mungkiniiiiii kitaaaa pernahhhhh ngelewatin harrrrrri yangg berattttt, tapiiiiiii setiapppp kaliiiii akuuuuu liattttt kamuuuuu, akuuuuu selaluuuuuu nemuuuu alasan buattttt tetep kuattttt. kamuuuuu ituuuuuu bukan cumaaaaa orangggg yang akuuuuu sayanggggg, tapiiiiiii jugaaaaa tempattttt akuuuuu pulanggggg setelahhhhh capeeeeee samaaaaa semuanyaaaa.
+
+makaciiiiii yaaaaa cayanggggg karenaaaaa kamuuuuu selaluuuuuu ngasihhhh akuuuuu rasaaaaa nyamannnnn yangg susahhhhh dijelasinnnnn. makaciiiiii udahhhhh tetep sabarrrrrr waktuuuuuu akuuuuu lagi banyakkkkk pikirannnnn, makaciiiiii udahhhhh tetep nyemangatin akuuuuu walaupunuuuuu kadanggggg kamuuuuu sendiriiiiii jugaaaa lagi capeeeeee. semuaaaaa perhatiannnnn kecilllll yang kamuuuuu kasihhhhh selaluuuuu akuuuuu ingettttt dan akuuuuu simpennnnn di hatiiiii.
+
+akuuuuu jugaaaaa mauuuuuu mintaaaaa maaffffff lagiiiiii yaaaaaa cayanggggg kalauuuuuu selamaaaaa iniiiiii masiiiiii adaaaa kataaaaa atauuuuuu sikappppp akuuuuu yang bikin kamuuuuu sedihhhhh. maaffffff kalauuuuuu kadanggggg akuuuuu belummmm bisaaaaa jadiiiii yangg terbaiktttt buattttt kamuuuuu. percayaaaa yaaaaaa, akuuuuu selaluuuuu pengennnn belajarrrrrr dariii setiappppp kesalahannnn supayaaaaa hubungan kitaaaa makinmmmm baikkkkk.
+
+akuuuuu jugaaaaa pengennnnnn kitaaaa terusssss jalaninnnn semuaaaaa iniiiiiii samaaaaa samaaaaa. bukanhhhh karenaaaaa hubungan yangg lamaaaaa ituuuuuu hebattttt, tapiiiiiii karenaaaaa setiappppp harinnnn kitaaaa samaaaaa samaaaaa milihhhh buattttt tetep bertahannnnn dan salinggggg mencintaiiiii. akuuuuu pengennnnn nantiiiiiii kalauuuuuu kitaaaa ingettttt hariii iniiiiii, kitaaaa bisaaaaa senyummmmm sambillllll bilanggggg "ternyataaaaa kitaaaa berhasilhhhh yaaaaaa."
+
+terima kasihhhhh yaaaaaa udahhhhh jadiiiii bahagiannnn hiduppppp akuuuuu. semogaaaaa di bulannnnn yanggggg keeeeee 8 iniiiiii, cintaaaa kitaaaa makinmmmm dewasaaaaa, makinmmmm kuattttt, makinmmmm banyakkkkk tawaaaa, makinmmmm banyakkkkk ceritaaaaa indahhhhh, dan makinmmmm yakinnnnnn kalauuuuuu kitaaaa emanggggg ditakdirinnnn buattttt salinggggg menemaniiiii.
+
+akuuuuu sayanggggggg bangettttt samaaaaa kamuuuuu, lebihhhhh dariiiii yangg bisaaaaa akuuuuu tulisssss ataupunnnnn ucapinnnn. semogaaaaa tangannnnn kitaaaa tetep salinggggg genggammmmm sampaiiiii nantiiiiiii, dan semogaaaaa hatiiiii kitaaaa gaaaa pernahhhhh berhentiiiiii buattttt salinggggg memilihhhhh. i loveeeeeeee youuuuuuu sooooo muchhhhh cayangggggggg 💕💕💕💕💕🫂🫂🫂🫂🫂
+
+dannnnnn satuuuuuu lagiiiiii yaaaaa cayanggggg, apapunuuuuu yangg bakalhhhh kitaaaa hadapinnnn nantiiiiiii, janganhhhh pernahhhhh takuttttt akuuuuu bakalhhhh ninggalinnnn kamuuuuu. selamannn hatiiiiiii akuuuuu masiiiiii bisaaaaa milihhhh, pilihannnnn ituuuuu bakalhhhh tetep kamuuuuu. akuuuuu bakalhhhh terusssss jagaaaaa cintaaaa iniiiiii, terusssss berusahaaaa, terusssss nemeninnnn kamuuuuu, karenaaaaa buattttt akuuuuu, kamuuuuu bukanhhhh cumaaaaa seseorangggg yang akuuuuu cintaiiiii, tapiiiiiii kamuuuuu adalahhhhh bahagiannnn hiduppppp yangg pengennnn akuuuuu perjuanginnnn setiappppp harinnnn. mwaaaaaa mwaaaaaa i loveeeee youuuuuu foreverrrrrr cayanggggggg 💕🫂
+
+I love you forever ❤️
+
+`;
+
+let i = 0;
+
+function typing(){
+
+    const typingSound = document.getElementById("typingSound");
+
+    if(i === 0){
+        typingSound.play().catch(()=>{});
+    }
+
+    if(i < text.length){
+
+        document.getElementById("typing").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typing,20);
+
+}else{
+
+    typingSound.pause();
+    typingSound.currentTime = 0;
+
+    // Tampilkan tombol peluk
+    document.getElementById("hugBtn").style.display = "inline-block";
+
+}
+}
+
+// ======================
+// BUKA KADO
+// ======================
+
+const gift = document.getElementById("gift");
+
+gift.onclick = function(){
+
+const cd = document.getElementById("countdown");
+
+cd.style.display="flex";
+
+let angka = ["3","2","1","🥳"];
+
+let index = 0;
+
+cd.innerHTML = "3";
+cd.classList.add("countAnim");
+
+const anim = setInterval(()=>{
+
+cd.classList.remove("countAnim");
+
+void cd.offsetWidth;
+
+cd.classList.add("countAnim");
+
+cd.innerHTML = angka[index];
+
+index++;
+
+if(index==angka.length){
+
+clearInterval(anim);
+
+setTimeout(()=>{
+
+cd.style.display="none";
+
+fireworks();
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+typing();
+
+setInterval(createHeart,300);
+
+setInterval(createPetal,500);
+
+setInterval(fireworks,8000);
+
+},1000);
+
+}
+
+},1000);
+
+}
+
+// ======================
+// EFEK TAMBAHAN
+// ======================
+
+// Efek glow judul
+setInterval(() => {
+
+const title = document.querySelector(".paper h1");
+
+if(title){
+
+title.style.textShadow =
+`0 0 ${10+Math.random()*20}px hotpink`;
+
+}
+
+},500);
+
+// Scroll otomatis pelan saat mengetik
+const autoScroll = setInterval(()=>{
+
+if(document.getElementById("letter").style.display=="block"){
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+}
+
+},1500);
+
+// ======================
+// PELUK VIRTUAL
+// ======================
+
+const hugBtn = document.getElementById("hugBtn");
+
+hugBtn.onclick = function(){
+
+    const text = document.getElementById("hugText");
+
+    text.innerHTML = `
+    🫂💕<br><br>
+    Peluk jauhhhh dari akuuuuuu 🤗<br>
+    Semogaaaa hatiii kamuuu hangattt yaaa 💕<br><br>
+    Aku sayanggg kamuuuu selaluuuu ❤️
+    `;
+
+    fireworks();
+
+    for(let i=0;i<30;i++){
+        setTimeout(createHeart,i*120);
+    }
+
+    hugBtn.innerHTML="💖 Sudah Dipeluk";
+    hugBtn.disabled=true;
+
+}
+
+// ======================
+// GALERI FOTO
+// ======================
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+setInterval(() => {
+
+slides[currentSlide].classList.remove("active");
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+slides[currentSlide].classList.add("active");
+
+},3000);
+
+</script>
+
+<audio id="typingSound" loop>
+    <source src="typing.mp3" type="audio/mpeg">
+</audio>
+
+<div id="countdown">3</div>
+
+</body>
+</html>
